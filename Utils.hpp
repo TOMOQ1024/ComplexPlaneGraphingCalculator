@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include <Siv3D.hpp>
-
+#include "Complex.hpp"
 
 
 class dPoint {
@@ -20,7 +20,7 @@ public:
 		: center(), scale()
 	{};
 	Graph(double cx, double cy, double sx, double sy);
-	bool calc(double x, double y);
+	bool calc(const Complex& z);
 };
 class Wnd {
 public:

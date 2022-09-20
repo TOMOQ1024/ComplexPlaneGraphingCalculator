@@ -4,6 +4,7 @@
 Wnd wnd;
 Image image;
 Graph graph;
+TextEditState te;
 
 void Main()
 {
@@ -13,7 +14,7 @@ void Main()
 	Window::Resize(wnd.w, wnd.h);
 	Scene::SetBackground(ColorF{ 0.8, 0.9, 1.0 });
 
-	graph = Graph(0, 0, 1.5, 1.5);
+	graph = Graph(0, 0, 2, 2);
 
 
 
@@ -24,6 +25,7 @@ void Main()
 
 		texture.fill(image);
 		texture.draw();
+		//SimpleGUI::TextBox(te, Vec2(wnd.w / 2 - 200, wnd.h - 50), 400);
 	}
 }
 

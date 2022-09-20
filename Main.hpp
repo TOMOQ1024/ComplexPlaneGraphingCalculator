@@ -7,3 +7,4 @@ extern Image image;
 
 extern Graph graph;
 extern Wnd wnd;
+extern TextEditState te;

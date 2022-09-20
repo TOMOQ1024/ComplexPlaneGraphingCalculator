@@ -8,4 +8,7 @@ void Update(void)
 	if (wheel || clicked || (Scene::FrameCount() == 1)) {
 		//Print << wheel;
 	}
+	if (!te.active) {
+		// 数式の更新
+	}
 }

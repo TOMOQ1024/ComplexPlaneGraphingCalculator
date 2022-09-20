@@ -2,11 +2,12 @@
 
 void Draw(void)
 {
+	Complex z;
 	for (auto Y : step(wnd.h)) {
-		const double y = gItoRy(Y);
+		z.im = gItoRy(Y);
 		for (auto X : step(wnd.w)) {
-			const double x = gItoRx(X);
-			if(graph.calc(x, y)) {
+			z.re = gItoRx(X);
+			if(graph.calc(z)) {
 				image[Y][X] = HSV((X + Y) / 3.0, 1, 1);
 			}
 		}

@@ -26,16 +26,17 @@ double gItoRx(int32 X) {
 	return (X * 2.0 - wnd.w) / wnd.r() * graph.scale.x;
 }
 double gItoRy(int32 Y) {
-	return (Y * 2.0 - wnd.h) / wnd.r() * graph.scale.y;
+	return -(Y * 2.0 - wnd.h) / wnd.r() * graph.scale.y;
 }
 int32 gRtoIx(double x) {
 	return int32(x * wnd.r() / graph.scale.x + wnd.w) / 2;
 }
 int32 gRtoIy(double y) {
-	return int32(y * wnd.r() / graph.scale.y + wnd.h) / 2;
+	return int32(-y * wnd.r() / graph.scale.y + wnd.h) / 2;
 }
 
-bool Graph::calc(double x, double y)
+bool Graph::calc(const Complex& z)
 {
-	return 1 > x * x + y * y + abs(x) * y;
+	Complex c = { z ^ 2.5 };
+	return 0 > sin(cRe(c))* sin(cIm(c));
 }
